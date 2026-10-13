@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #FAF7F0;
+    --text-primary: #1C1C1C;
+    --gold: #B8893B;
+    --gold-light: #D4AF37;
+    --forest: #0F2A1D;
+  }
+
+  .dark {
+    --bg-primary: #07160F;
+    --text-primary: #FAF7F0;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Custom Luxury Gradients & Borders */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFBE82 0%, #B8893B 50%, #8C6524 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5984A 0%, #B8893B 60%, #9B702A 100%);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(135deg, #E6CA92, #B8893B, #8C6524) 1;
+}
+
+.forest-gradient-bg {
+  background: linear-gradient(180deg, #0F2A1D 0%, #07160F 100%);
+}
+
+.forest-card-gradient {
+  background: linear-gradient(145deg, rgba(21, 60, 42, 0.85) 0%, rgba(10, 28, 19, 0.95) 100%);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(250, 247, 240, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 137, 59, 0.2);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 42, 29, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 137, 59, 0.25);
+}
+
+/* Subtle luxury noise texture simulation */
+.bg-grain {
+  background-image: radial-gradient(rgba(184, 137, 59, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F0;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #07160F;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8893B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9E712B;
+}
+
+/* Smooth Image Zoom */
+.zoom-container {
+  overflow: hidden;
+}
+.zoom-image {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.zoom-container:hover .zoom-image {
+  transform: scale(1.06);
+}
