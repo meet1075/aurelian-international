@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="md:col-span-5 space-y-3">
             <Logo size="md" />
             <p className="text-xs sm:text-sm text-ivory-200/75 max-w-sm leading-relaxed font-light">
-              Government-recognized export house specializing exclusively in export-grade Indian Spices and Architectural Vitrified & Porcelain Surfaces.
+              Government-recognized export house specializing in Indian Spices, Architectural Vitrified Surfaces, and Farm-Fresh Fruits & Vegetables.
             </p>
           </div>
 
@@ -33,6 +33,9 @@ export default function Footer() {
               </Link>
               <Link to="/products?category=tiles" className="hover:text-gold transition-colors">
                 Tiles & Porcelain Slabs
+              </Link>
+              <Link to="/products?category=produce" className="hover:text-gold transition-colors">
+                Fresh Fruits &amp; Vegetables
               </Link>
               <Link to="/about" className="hover:text-gold transition-colors">
                 About Our Export House

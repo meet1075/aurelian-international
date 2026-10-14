@@ -1,9 +1,9 @@
 export const companyInfo = {
   name: "Aurelian International",
   shortName: "Aurelian",
-  tagline: "Premium Spices. Timeless Tiles. Global Possibilities.",
-  subtitle: "Exporters of Spices & Tiles From India",
-  description: "Aurelian International is India's distinguished government-recognized export house specializing exclusively in high-grade Indian spices and architectural porcelain & vitrified surfaces. We bridge India's fertile spice lands and Morbi's ceramic epicenters directly to global commercial importers.",
+  tagline: "Premium Spices. Architectural Surfaces. Fresh Fruits & Vegetables.",
+  subtitle: "Exporters of Spices, Tiles & Fresh Produce From India",
+  description: "Aurelian International is India's distinguished government-recognized export house specializing in high-grade Indian spices, architectural porcelain & vitrified surfaces, and farm-fresh fruits & vegetables. We bridge India's fertile agrarian belts and Morbi's ceramic epicenters directly to global commercial importers.",
   phone: "+91 98250 14820",
   phoneAlt: "+91 94470 21980",
   whatsapp: "+919825014820",
@@ -28,16 +28,16 @@ export const companyInfo = {
 
 export const trustStats = [
   { value: "48+", label: "Countries Served", detail: "Global shipping footprint across 6 continents" },
-  { value: "120+", label: "Product SKUs", detail: "Specialized whole & ground spices & tile formats" },
-  { value: "100%", label: "Quality Checked", detail: "Batch-wise pre-shipment lab analysis & testing" },
+  { value: "150+", label: "Product SKUs", detail: "Spices, architectural tiles, and fresh farm produce" },
+  { value: "100%", label: "Quality Checked", detail: "Batch-wise pre-shipment lab analysis & cold-chain audit" },
   { value: "24/7", label: "Export Support", detail: "Dedicated multilinguistic international logistics desk" }
 ];
 
 export const secondaryStats = [
   { value: "18,500+", unit: "MT", label: "Spices Shipped Annually" },
   { value: "5.2M+", unit: "SQM", label: "Tiles Supplied Globally" },
-  { value: "99.4%", unit: "", label: "On-Time Port Dispatch" },
-  { value: "100%", unit: "", label: "Export Grade Compliance" }
+  { value: "12,000+", unit: "MT", label: "Fresh Fruits & Veges Exported" },
+  { value: "99.4%", unit: "", label: "On-Time Port Dispatch" }
 ];
 
 export const exportProcessSteps = [

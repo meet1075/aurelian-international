@@ -87,12 +87,12 @@ export default function AboutPage() {
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest-950 dark:text-ivory leading-tight">
-                Two Specialized Verticals. <br />
+                Three Specialized Verticals. <br />
                 Uncompromising Export Integrity.
               </h2>
 
               <p className="text-base text-charcoal/80 dark:text-ivory-200/80 leading-relaxed font-light">
-                <strong>Aurelian International</strong> was founded in <strong>2018</strong> by the <strong>Aurelian Trade Consortium</strong>, based strategically in <strong>Morbi & Kochi, India</strong>. Rather than operating as a sprawling, generic merchant exporter trading in dozens of unrelated goods, our founders made an intentional, visionary commitment: <em>to master and export strictly two industries where India commands undisputed global dominance.</em>
+                <strong>Aurelian International</strong> was founded in <strong>2018</strong> by the <strong>Aurelian Trade Consortium</strong>, based strategically in <strong>Morbi &amp; Kochi, India</strong>. Rather than operating as a sprawling, generic merchant exporter trading in dozens of unrelated goods, our founders made an intentional, visionary commitment: <em>to master and export core industries where India commands undisputed global dominance.</em>
               </p>
 
               <div className="space-y-4 pt-2 text-sm text-charcoal/70 dark:text-ivory-200/70 leading-relaxed">
@@ -100,7 +100,10 @@ export default function AboutPage() {
                   <strong>1. Indian Spices:</strong> Sourced through centuries-old cultivation zones across the Western Ghats (Kerala) and Saurashtra (Gujarat), processed under strict FSSAI, US FDA, and Spices Board of India standards.
                 </p>
                 <p>
-                  <strong>2. Architectural Tiles & Slabs:</strong> Manufactured in Morbi, Gujarat—the globe's leading ceramic innovation hub—using Italian continuous presses to deliver porcelain, GVT/PGVT vitrified, and ceramic surfaces complying with ISO 13006 and CE norms.
+                  <strong>2. Architectural Tiles &amp; Slabs:</strong> Manufactured in Morbi, Gujarat—the globe's leading ceramic innovation hub—using Italian continuous presses to deliver porcelain, GVT/PGVT vitrified, and ceramic surfaces complying with ISO 13006 and CE norms.
+                </p>
+                <p>
+                  <strong>3. Farm-Fresh Fruits &amp; Vegetables:</strong> Sourced directly from certified APEDA grower cooperatives across Maharashtra and Gujarat, shipped via temperature-controlled CA Reefer containers and rapid air freight.
                 </p>
               </div>
 

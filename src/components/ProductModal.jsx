@@ -112,7 +112,7 @@ export default function ProductModal({ product, onClose }) {
                 <div>
                   <span className="text-charcoal/50 dark:text-ivory/50 block">Origin / Manufacturing</span>
                   <span className="font-semibold text-forest-900 dark:text-ivory mt-0.5 block">
-                    {isSpice ? 'India (Direct Agro-Clusters)' : 'Morbi, Gujarat, India'}
+                    {product.specs?.origin || (isSpice ? 'India (Direct Agro-Clusters)' : 'Morbi, Gujarat, India')}
                   </span>
                 </div>
               </div>

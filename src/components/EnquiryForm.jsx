@@ -18,10 +18,13 @@ export default function EnquiryForm({ prefilledProduct = '', prefilledCategory =
 
   useEffect(() => {
     if (prefilledCategory) {
-      if (prefilledCategory.toLowerCase() === 'spices') {
+      const cat = prefilledCategory.toLowerCase();
+      if (cat === 'spices') {
         setFormData(prev => ({ ...prev, productInterest: 'Spices' }));
-      } else if (prefilledCategory.toLowerCase() === 'tiles') {
+      } else if (cat === 'tiles') {
         setFormData(prev => ({ ...prev, productInterest: 'Tiles' }));
+      } else if (cat === 'produce' || cat === 'fruits' || cat === 'vegetables') {
+        setFormData(prev => ({ ...prev, productInterest: 'Produce' }));
       }
     }
     if (prefilledProduct) {
@@ -148,17 +151,18 @@ export default function EnquiryForm({ prefilledProduct = '', prefilledCategory =
               <label className="block text-xs uppercase font-semibold tracking-wider text-ivory-200/90">
                 Product Interest
               </label>
-              <div className="grid grid-cols-3 gap-2.5 sm:gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                 {[
                   { value: 'Spices', label: 'Indian Spices' },
                   { value: 'Tiles', label: 'Tiles & Slabs' },
-                  { value: 'Both', label: 'Both Categories' }
+                  { value: 'Produce', label: 'Fruits & Veges' },
+                  { value: 'All', label: 'All Categories' }
                 ].map((item) => (
                   <button
                     key={item.value}
                     type="button"
                     onClick={() => setFormData(prev => ({ ...prev, productInterest: item.value }))}
-                    className={`py-3 px-3 rounded-xl text-xs font-semibold tracking-wider transition-all border text-center ${
+                    className={`py-2.5 px-2 rounded-xl text-xs font-semibold tracking-wider transition-all border text-center ${
                       formData.productInterest === item.value
                         ? 'bg-gold text-forest-950 font-bold border-gold shadow-md'
                         : 'bg-forest-900/60 text-ivory-200/80 border-gold/20 hover:border-gold/50 hover:bg-forest-900'

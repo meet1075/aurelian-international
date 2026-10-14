@@ -9,7 +9,7 @@ import ProductCard from '../components/ProductCard';
 import ProductModal from '../components/ProductModal';
 import EnquiryForm from '../components/EnquiryForm';
 import GlobalReachMap from '../components/GlobalReachMap';
-import { spicesProducts, tilesProducts } from '../data/productsData';
+import { spicesProducts, tilesProducts, produceProducts } from '../data/productsData';
 import { 
   trustStats, exportProcessSteps, whyChooseUsFeatures, 
   globalDestinations, clientTestimonials, faqList, companyInfo 
@@ -21,7 +21,7 @@ export default function HomePage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
 
-  // Hero backgrounds: crossfading between vibrant spice heritage & luxurious architectural surfaces
+  // Hero backgrounds: crossfading across spices, architectural surfaces, and fresh produce
   const heroSlides = [
     {
       image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1920&q=85",
@@ -32,15 +32,20 @@ export default function HomePage() {
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=85",
       titleTheme: "Architectural Vitrified Surfaces",
       caption: "Precision calibrated tiles crafted in Morbi ceramic hub"
+    },
+    {
+      image: "/images/produce/mangoes.jpg",
+      titleTheme: "Farm-Fresh Fruits & Vegetables",
+      caption: "GI Alphonso Mangoes, Pomegranates & Onions via Reefer CA containers"
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveHeroSlide(prev => (prev === 0 ? 1 : 0));
+      setActiveHeroSlide(prev => (prev + 1) % heroSlides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [heroSlides.length]);
 
   const nextTestimonial = () => {
     setActiveTestimonial(prev => (prev + 1) % clientTestimonials.length);
@@ -82,7 +87,7 @@ export default function HomePage() {
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-gold/50 bg-forest-950/80 backdrop-blur-md mb-6 shadow-xl animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
             <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-gold">
-              Exporters of Spices & Tiles From India
+              Exporters of Spices, Tiles & Fresh Produce From India
             </span>
           </div>
 
@@ -90,12 +95,12 @@ export default function HomePage() {
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 max-w-4xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             Premium Spices. <br className="hidden sm:inline" />
             <span className="gold-gradient-text italic font-normal drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">Timeless Tiles.</span> <br />
-            Global Possibilities.
+            Fresh Fruits & Vegetables.
           </h1>
 
           {/* Subtext with soft backdrop blur / drop shadow */}
           <p className="text-base sm:text-xl text-ivory font-normal leading-relaxed max-w-2xl mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-forest-950/30 backdrop-blur-xs rounded-2xl px-4 py-2 border border-white/10">
-            Aurelian International is your trusted partner for export-quality Indian spices and premium tiles, delivered worldwide.
+            Aurelian International is your trusted partner for export-grade Indian spices, architectural tiles, and fresh farm produce, delivered worldwide.
           </p>
 
           {/* Action Buttons */}
@@ -176,15 +181,15 @@ export default function HomePage() {
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 dark:text-ivory leading-tight">
-                Leading Spices & Tiles Exporter From India
+                Leading Spices, Tiles &amp; Produce Exporter From India
               </h2>
 
               <p className="text-base sm:text-lg text-charcoal/80 dark:text-ivory-200/80 leading-relaxed font-light">
-                Headquartered strategically with operational hubs across Morbi's ceramic epicenter and the ancient spice corridors of Kerala and Gujarat, <strong>Aurelian International</strong> caters exclusively to discerning global importers, commercial distributors, architecture contractors, and retail chains.
+                Headquartered strategically with operational hubs across Morbi's ceramic epicenter, the ancient spice corridors of Kerala and Gujarat, and western India's fertile agrarian valleys, <strong>Aurelian International</strong> caters exclusively to discerning global importers, commercial distributors, architecture contractors, and retail supermarket chains.
               </p>
 
               <p className="text-sm sm:text-base text-charcoal/70 dark:text-ivory-200/70 leading-relaxed">
-                By maintaining uncompromised focus on strictly two world-class verticals—<strong>Indian Spices</strong> and <strong>Vitrified / Porcelain Tiles</strong>—we guarantee single-origin authenticity, batch-level lab testing, ISO compliance, and uninterrupted maritime ocean freight from India's premier seaports directly to your destination warehouses.
+                By maintaining uncompromising focus on three world-class verticals—<strong>Indian Spices</strong>, <strong>Vitrified &amp; Porcelain Tiles</strong>, and <strong>Farm-Fresh Fruits &amp; Vegetables</strong>—we guarantee single-origin authenticity, batch-level lab testing, APEDA/ISO compliance, and uninterrupted cold-chain and maritime freight from India's premier seaports directly to your destination warehouses.
               </p>
 
               {/* Key Highlights list */}
@@ -277,68 +282,99 @@ export default function HomePage() {
           <SectionHeading
             label="Dedicated Portfolios"
             title="Our Export Range"
-            subtitle="Specializing exclusively in two premier Indian export industries. Each product line backed by dedicated quality inspection and certified packaging."
+            subtitle="Three world-class export divisions backed by dedicated quality inspection, phytosanitary certifications, and seaworthy container palletizing."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             
             {/* Category Card 1: SPICES */}
-            <div className="group relative rounded-3xl overflow-hidden min-h-[460px] flex flex-col justify-end p-8 sm:p-10 border border-gold/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold-glow">
+            <div className="group relative rounded-3xl overflow-hidden min-h-[440px] flex flex-col justify-end p-6 sm:p-8 border border-gold/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold-glow">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
                 style={{
                   backgroundImage: `url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1200&q=80')`
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/75 to-transparent" />
               
-              <div className="relative z-10 space-y-3">
-                <span className="text-xs uppercase font-bold tracking-[0.25em] text-spice-400">
+              <div className="relative z-10 space-y-2.5">
+                <span className="text-[11px] uppercase font-bold tracking-[0.25em] text-spice-400">
                   Agro Commodities • Line 01
                 </span>
-                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-ivory">
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ivory">
                   Indian Spices
                 </h3>
-                <p className="text-sm text-ivory-200/80 line-clamp-2 max-w-md">
-                  Export-grade Turmeric, Red Chilli, Black Pepper, Green Cardamom, Cumin, and proprietary masala blends with high volatile oil and verified purity.
+                <p className="text-xs sm:text-sm text-ivory-200/80 line-clamp-2">
+                  High-curcumin Turmeric, Guntur Red Chilli, Tellicherry Black Pepper, Cardamom & cumin seeds.
                 </p>
                 <div className="pt-2">
                   <Link
                     to="/products?category=spices"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs uppercase font-bold tracking-wider bg-gold text-forest-950 hover:bg-gold-400 transition-all shadow-md group-hover:scale-105"
+                    className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs uppercase font-bold tracking-wider bg-gold text-forest-950 hover:bg-gold-400 transition-all shadow-md group-hover:scale-105"
                   >
-                    <span>Explore Spices Range →</span>
+                    <span>Explore Spices →</span>
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Category Card 2: TILES */}
-            <div className="group relative rounded-3xl overflow-hidden min-h-[460px] flex flex-col justify-end p-8 sm:p-10 border border-gold/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold-glow">
+            <div className="group relative rounded-3xl overflow-hidden min-h-[440px] flex flex-col justify-end p-6 sm:p-8 border border-gold/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold-glow">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
                 style={{
                   backgroundImage: `url('/images/tiles/statuario-royal.jpg')`
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/70 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/75 to-transparent" />
               
-              <div className="relative z-10 space-y-3">
-                <span className="text-xs uppercase font-bold tracking-[0.25em] text-gold">
+              <div className="relative z-10 space-y-2.5">
+                <span className="text-[11px] uppercase font-bold tracking-[0.25em] text-gold">
                   Surfaces & Ceramics • Line 02
                 </span>
-                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-ivory">
-                  Tiles & Slabs
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ivory">
+                  Tiles &amp; Slabs
                 </h3>
-                <p className="text-sm text-ivory-200/80 line-clamp-2 max-w-md">
-                  Glazed Vitrified (GVT/PGVT), polished porcelain, matte ceramic, wooden-finish planks, and grand architectural slabs crafted in Morbi.
+                <p className="text-xs sm:text-sm text-ivory-200/80 line-clamp-2">
+                  Glazed Vitrified (GVT/PGVT), polished porcelain, matte ceramic, and architectural marble-look slabs.
                 </p>
                 <div className="pt-2">
                   <Link
                     to="/products?category=tiles"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs uppercase font-bold tracking-wider bg-gold text-forest-950 hover:bg-gold-400 transition-all shadow-md group-hover:scale-105"
+                    className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs uppercase font-bold tracking-wider bg-gold text-forest-950 hover:bg-gold-400 transition-all shadow-md group-hover:scale-105"
                   >
-                    <span>Explore Tiles Range →</span>
+                    <span>Explore Tiles →</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Category Card 3: FRESH FRUITS & VEGETABLES */}
+            <div className="group relative rounded-3xl overflow-hidden min-h-[440px] flex flex-col justify-end p-6 sm:p-8 border border-gold/30 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-gold-glow">
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                style={{
+                  backgroundImage: `url('/images/produce/mangoes.jpg')`
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/75 to-transparent" />
+              
+              <div className="relative z-10 space-y-2.5">
+                <span className="text-[11px] uppercase font-bold tracking-[0.25em] text-emerald-400">
+                  Fresh Produce • Line 03
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ivory">
+                  Fruits &amp; Veges
+                </h3>
+                <p className="text-xs sm:text-sm text-ivory-200/80 line-clamp-2">
+                  GI Alphonso Mangoes, Bhagwa Pomegranates, Cavendish Bananas & Nashik Onions in cold-chain reefers.
+                </p>
+                <div className="pt-2">
+                  <Link
+                    to="/products?category=produce"
+                    className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full text-xs uppercase font-bold tracking-wider bg-gold text-forest-950 hover:bg-gold-400 transition-all shadow-md group-hover:scale-105"
+                  >
+                    <span>Explore Produce →</span>
                   </Link>
                 </div>
               </div>
@@ -410,6 +446,42 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {tilesProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onQuickView={setSelectedProduct}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 6B. FEATURED FRESH FRUITS & VEGETABLES ═══ */}
+      <section className="py-20 lg:py-28 bg-ivory dark:bg-forest-950 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <div className="inline-flex items-center gap-2 mb-2">
+                <span className="h-[1px] w-6 bg-gold"></span>
+                <span className="text-xs uppercase font-bold tracking-[0.2em] text-emerald-500">
+                  Cold Chain &amp; APEDA Certified
+                </span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 dark:text-ivory">
+                Fresh Fruits &amp; Vegetables
+              </h2>
+            </div>
+            <Link
+              to="/products?category=produce"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-xs uppercase font-bold tracking-wider text-gold hover:text-gold-400 transition-colors"
+            >
+              <span>View Full Produce Range</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {produceProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -668,7 +740,7 @@ export default function HomePage() {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-ivory leading-tight">
-            Ready to Import Premium Spices & Tiles?
+            Ready to Import Spices, Tiles or Fresh Produce?
           </h2>
 
           <p className="text-base sm:text-lg text-ivory-200/85 max-w-2xl mx-auto font-light leading-relaxed">

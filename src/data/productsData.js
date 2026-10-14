@@ -386,3 +386,115 @@ export const tilesProducts = [
     }
   }
 ];
+
+export const produceProducts = [
+  {
+    id: "produce-mango",
+    name: "GI Ratnagiri & Devgad Alphonso Mangoes (Hapus)",
+    category: "Fresh Fruits",
+    categoryType: "produce",
+    subCategory: "Exotic Fruits",
+    tag: "Air Cargo · Reefer Container",
+    shortDesc: "The revered 'King of Mangoes' with GI certification from coastal orchards. Saffron pulp, fiberless velvet texture, and intense floral aroma.",
+    image: "/images/produce/mangoes.jpg",
+    gallery: [
+      "/images/produce/mangoes.jpg"
+    ],
+    badge: "GI Certified & Hot Water Treated",
+    specs: {
+      botanicalName: "Mangifera indica",
+      origin: "Ratnagiri & Devgad, Maharashtra, India",
+      grade: "A Grade Export (220g to 300g per fruit)",
+      sweetness: "18° to 22° Brix (Naturally high sweetness)",
+      treatment: "Hot Water Dip Treatment (HWDT) / VHT & Irradiation for US/EU export",
+      packaging: "Export corrugated cartons (3kg / 12 pcs or 4.5kg / 18 pcs) with protective foam netting",
+      temperature: "8°C to 10°C (Controlled Atmosphere / Reefer)",
+      moq: "500 Cartons (Air Cargo) / 1×40ft Reefer Container",
+      shelfLife: "21 Days under optimal cold chain",
+      certifications: "APEDA, Global G.A.P., Phytosanitary, US FDA registered"
+    }
+  },
+  {
+    id: "produce-pomegranate",
+    name: "Bhagwa Super Red Fresh Pomegranates",
+    category: "Fresh Fruits",
+    categoryType: "produce",
+    subCategory: "Fresh Fruits",
+    tag: "Air Cargo & Reefer FCL",
+    shortDesc: "Globally acclaimed Bhagwa cultivar with glossy deep ruby rind, soft edible seeds, and sweet, antioxidant-rich crimson arils.",
+    image: "/images/produce/pomegranates.jpg",
+    gallery: [
+      "/images/produce/pomegranates.jpg"
+    ],
+    badge: "Deep Red Arils · Grade A",
+    specs: {
+      botanicalName: "Punica granatum",
+      origin: "Solapur & Nashik, Maharashtra, India",
+      grade: "Super Extra Bold (300g - 400g+) / Export Bold (250g - 300g)",
+      countPerBox: "9, 10, 12, 14 fruits per master carton",
+      sweetness: "15° to 16.5° Brix",
+      packaging: "3.5kg / 4.0kg net weight ventilated export carton boxes",
+      temperature: "5°C to 7°C (85% to 90% Relative Humidity)",
+      moq: "1×40ft High Cube Reefer (Approx. 4,400 boxes ~ 17.6 MT)",
+      shelfLife: "60 to 75 Days under refrigerated storage",
+      certifications: "Global G.A.P., APEDA, FSSAI, Phytosanitary"
+    }
+  },
+  {
+    id: "produce-banana",
+    name: "Premium Cavendish G9 Green Bananas",
+    category: "Fresh Fruits",
+    categoryType: "produce",
+    subCategory: "Fresh Fruits",
+    tag: "Controlled Atmosphere Reefer",
+    shortDesc: "Export-grade Grand Naine (G9) green bananas grown in fertile black soils, harvested at precise maturity for extended trans-ocean voyages.",
+    image: "/images/produce/bananas.jpg",
+    gallery: [
+      "/images/produce/bananas.jpg"
+    ],
+    badge: "Grand Naine (G9) Export Grade",
+    specs: {
+      botanicalName: "Musa acuminata (AAA group)",
+      origin: "Bharuch (Gujarat) & Jalgaon (Maharashtra), India",
+      fingerLength: "Minimum 18cm to 22cm (Caliber 39 to 46)",
+      handsPerBox: "4, 5, 6 hands or cluster packs",
+      packaging: "13.5kg / 18.14kg telescopic bottom-vented cartons with vacuum Banavac polybag",
+      temperature: "13.2°C to 13.5°C constant reefer holding",
+      moq: "1×40ft Reefer Container (Approx. 1,540 boxes ~ 20.8 MT)",
+      transitTolerance: "Up to 35 days voyage in CA Reefer without premature ripening",
+      certifications: "APEDA, Global G.A.P., Phytosanitary Certificate"
+    }
+  },
+  {
+    id: "produce-onion",
+    name: "Nashik Red & Pink Fresh Onions",
+    category: "Fresh Vegetables",
+    categoryType: "produce",
+    subCategory: "Fresh Vegetables",
+    tag: "Bulk Mesh Bags · FCL",
+    shortDesc: "World-renowned Maharashtra red onions celebrated for firm globular bulbs, pungent sulfur zing, strong protective dry skin, and exceptional shelf life.",
+    image: "/images/produce/onions.jpg",
+    gallery: [
+      "/images/produce/onions.jpg"
+    ],
+    badge: "Export Grade 45mm+ / 55mm+",
+    specs: {
+      botanicalName: "Allium cepa",
+      origin: "Nashik & Lasalgaon, Maharashtra, India",
+      sizeCaliber: "45mm - 55mm / 55mm - 65mm / 65mm+ jumbo",
+      quality: "Well-cured, dried neck, free from fungal rot and sprouts",
+      packaging: "5kg, 10kg, 25kg, 50kg Red leno mesh ventilated bags or jute sacks",
+      stowage: "Naturally ventilated dry container or reefer at 0°C - 2°C (65% RH)",
+      moq: "1×20ft FCL (13.5 MT) / 1×40ft FCL (28 MT)",
+      shelfLife: "60 to 90 Days in well-ventilated cool storage",
+      certifications: "APEDA, Plant Quarantine / Phytosanitary, SGS Inspection"
+    }
+  }
+];
+
+export const allProducts = [
+  ...spicesProducts,
+  ...tilesProducts,
+  ...produceProducts
+];
+
