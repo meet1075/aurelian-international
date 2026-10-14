@@ -8,6 +8,7 @@ import SectionHeading from '../components/SectionHeading';
 import ProductCard from '../components/ProductCard';
 import ProductModal from '../components/ProductModal';
 import EnquiryForm from '../components/EnquiryForm';
+import GlobalReachMap from '../components/GlobalReachMap';
 import { spicesProducts, tilesProducts } from '../data/productsData';
 import { 
   trustStats, exportProcessSteps, whyChooseUsFeatures, 
@@ -20,7 +21,7 @@ export default function HomePage() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
 
-  // Hero backgrounds: crossfading between vibrant spice market & luxurious marble/tile showroom
+  // Hero backgrounds: crossfading between vibrant spice heritage & luxurious architectural surfaces
   const heroSlides = [
     {
       image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1920&q=85",
@@ -51,48 +52,49 @@ export default function HomePage() {
   return (
     <div className="w-full overflow-hidden">
 
-      {/* ═══ 1. HERO SECTION ═══ */}
+      {/* ═══ 1. HERO SECTION (Bright, Vivid & Clearly Visible) ═══ */}
       <section className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-forest-950 text-ivory">
-        {/* Slideshow background layers */}
+        {/* Slideshow background layers: Bright, vibrant and clearly visible */}
         {heroSlides.map((slide, idx) => (
           <div
             key={idx}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              activeHeroSlide === idx ? 'opacity-40 scale-100' : 'opacity-0 scale-105'
+              activeHeroSlide === idx ? 'opacity-90 scale-100' : 'opacity-0 scale-105'
             }`}
             style={{
               backgroundImage: `url('${slide.image}')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
+              filter: 'brightness(1.05) contrast(1.05) saturate(1.1)',
               transition: 'opacity 1.5s ease-in-out, transform 8s ease'
             }}
           />
         ))}
 
-        {/* Dark Green Gradient Cinematic Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-950/80 via-forest-900/70 to-forest-950/95 pointer-events-none" />
-        <div className="absolute inset-0 bg-radial-gradient pointer-events-none opacity-40" />
+        {/* Light, subtle translucent gradient overlay so the photo stays bright while text is legible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-950/60 via-black/30 to-forest-950/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-radial-gradient pointer-events-none opacity-20" />
 
-        {/* Hero Content */}
+        {/* Hero Content with enhanced contrast drop-shadows */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16 flex flex-col items-center">
           
           {/* Small Gold Label */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-gold/40 bg-forest-900/60 backdrop-blur-md mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-gold/50 bg-forest-950/80 backdrop-blur-md mb-6 shadow-xl animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
             <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] uppercase text-gold">
               Exporters of Spices & Tiles From India
             </span>
           </div>
 
-          {/* Headline in Large Serif */}
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-ivory leading-[1.1] mb-6 max-w-4xl">
+          {/* Headline in Large Serif with crisp shadow for contrast */}
+          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 max-w-4xl drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
             Premium Spices. <br className="hidden sm:inline" />
-            <span className="gold-gradient-text italic font-normal">Timeless Tiles.</span> <br />
+            <span className="gold-gradient-text italic font-normal drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">Timeless Tiles.</span> <br />
             Global Possibilities.
           </h1>
 
-          {/* Subtext */}
-          <p className="text-base sm:text-xl text-ivory-200/85 font-light leading-relaxed max-w-2xl mb-10">
+          {/* Subtext with soft backdrop blur / drop shadow */}
+          <p className="text-base sm:text-xl text-ivory font-normal leading-relaxed max-w-2xl mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-forest-950/30 backdrop-blur-xs rounded-2xl px-4 py-2 border border-white/10">
             Aurelian International is your trusted partner for export-quality Indian spices and premium tiles, delivered worldwide.
           </p>
 
@@ -100,7 +102,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <Link
               to="/products"
-              className="w-full sm:w-auto px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm text-forest-950 bg-gradient-to-r from-gold-400 via-gold to-gold-600 hover:from-gold-300 hover:to-gold-500 shadow-lg shadow-gold/30 hover:shadow-gold-glow transition-all duration-300 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm text-forest-950 bg-gradient-to-r from-gold-400 via-gold to-gold-600 hover:from-gold-300 hover:to-gold-500 shadow-xl shadow-black/40 hover:shadow-gold-glow transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               <span>View Products</span>
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -108,7 +110,7 @@ export default function HomePage() {
 
             <Link
               to="/enquiry"
-              className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold uppercase tracking-wider text-xs sm:text-sm text-ivory border border-gold/50 hover:bg-gold/15 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold uppercase tracking-wider text-xs sm:text-sm text-white bg-forest-950/70 backdrop-blur-md border border-gold/60 hover:bg-gold/20 shadow-xl shadow-black/30 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <span>Connect With Us</span>
               <ArrowUpRight size={16} className="text-gold" />
@@ -530,7 +532,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══ 9. GLOBAL REACH (Stylized World Map & Destination Dots) ═══ */}
+      {/* ═══ 9. GLOBAL REACH (World Night Map with Golden Curved Trade Routes) ═══ */}
       <section className="py-20 lg:py-28 bg-ivory dark:bg-forest-950 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -539,78 +541,7 @@ export default function HomePage() {
             subtitle="Delivering containerized consignments across 48+ countries from India's west and south coast ports."
           />
 
-          <div className="relative rounded-3xl bg-forest-950 border border-gold/30 p-8 sm:p-12 overflow-hidden shadow-2xl text-ivory">
-            {/* World Map SVG Graphic Silhouette */}
-            <div className="relative w-full aspect-[21/9] min-h-[300px] flex items-center justify-center">
-              
-              {/* Stylized Vector World Map Wireframe */}
-              <svg
-                viewBox="0 0 1000 460"
-                className="w-full h-full opacity-20 pointer-events-none fill-gold/80 stroke-gold/40 stroke-[0.5]"
-              >
-                {/* Simplified Continents Silhouette */}
-                <path d="M150,120 Q180,80 260,90 Q300,140 280,200 Q230,240 180,200 Z" />
-                <path d="M240,240 Q320,240 310,340 Q270,420 220,380 Q210,300 240,240 Z" />
-                <path d="M480,90 Q560,70 580,130 Q540,180 480,150 Z" />
-                <path d="M470,180 Q560,180 580,280 Q520,360 460,320 Q440,240 470,180 Z" />
-                <path d="M600,80 Q760,70 820,130 Q800,220 700,200 Q630,160 600,80 Z" />
-                <path d="M720,280 Q840,270 820,380 Q750,390 720,320 Z" />
-              </svg>
-
-              {/* Origin Marker: India */}
-              <div className="absolute top-[48%] left-[63%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 group">
-                <div className="relative">
-                  <span className="absolute -inset-2 rounded-full bg-gold animate-ping opacity-60"></span>
-                  <div className="w-5 h-5 rounded-full bg-gold border-2 border-forest-950 flex items-center justify-center shadow-gold-glow">
-                    <span className="w-1.5 h-1.5 rounded-full bg-forest-950"></span>
-                  </div>
-                </div>
-                <span className="mt-1 text-[11px] font-bold text-gold uppercase tracking-wider bg-forest-950/90 px-2 py-0.5 rounded border border-gold/40">
-                  India (HQ & Ports)
-                </span>
-              </div>
-
-              {/* Destination Hotspots */}
-              <div className="absolute top-[42%] left-[56%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-gold/90 border border-white animate-pulse" />
-                <span className="text-[10px] text-ivory/80 bg-black/60 px-1.5 py-0.5 rounded mt-0.5">Middle East (GCC)</span>
-              </div>
-
-              <div className="absolute top-[32%] left-[50%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-gold/90 border border-white animate-pulse" />
-                <span className="text-[10px] text-ivory/80 bg-black/60 px-1.5 py-0.5 rounded mt-0.5">Europe & UK</span>
-              </div>
-
-              <div className="absolute top-[35%] left-[23%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-gold/90 border border-white animate-pulse" />
-                <span className="text-[10px] text-ivory/80 bg-black/60 px-1.5 py-0.5 rounded mt-0.5">North America</span>
-              </div>
-
-              <div className="absolute top-[58%] left-[75%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-gold/90 border border-white animate-pulse" />
-                <span className="text-[10px] text-ivory/80 bg-black/60 px-1.5 py-0.5 rounded mt-0.5">SE Asia</span>
-              </div>
-
-              <div className="absolute top-[62%] left-[53%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-gold/90 border border-white animate-pulse" />
-                <span className="text-[10px] text-ivory/80 bg-black/60 px-1.5 py-0.5 rounded mt-0.5">Africa</span>
-              </div>
-            </div>
-
-            {/* Region Breakdown Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8 pt-6 border-t border-gold/20 text-xs">
-              {globalDestinations.map((dest, i) => (
-                <div key={i} className="bg-forest-900/80 p-3.5 rounded-xl border border-gold/20">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-gold font-bold">{dest.region}</span>
-                    <span className="text-[10px] text-ivory-300/60">{dest.share}</span>
-                  </div>
-                  <p className="text-[11px] text-ivory-200/70 truncate">{dest.countries}</p>
-                </div>
-              ))}
-            </div>
-
-          </div>
+          <GlobalReachMap />
         </div>
       </section>
 
